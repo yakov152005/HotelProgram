@@ -44,4 +44,9 @@ public class Hotel {
 		return "Hotel Name: " + this.name + "\n City: " +city +
 				"\n Total rooms:" + this.rooms + "\n Free rooms: " + free;
 	}
+		public float percentFreeRooms(){
+		float percent = ((float) this.free/this.rooms) * 100;
+		return percent;
+	}
+}
 }
