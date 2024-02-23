@@ -7,7 +7,7 @@ public class Program {
 	}
 	public static void hotels(){
 		Scanner s =new Scanner(System.in);
-		Hotel[] hotelsAr = new Hotel[10];
+		Hotel[] hotelsAr = new Hotel[2];
 		String name;
 		String city;
 		int rooms;
@@ -33,9 +33,16 @@ public class Program {
 
 		for (int i = 0; i < hotelsAr.length; i++) {
 			if (nameCity.equals(hotelsAr[i].getCity())){
-				if (hotelsAr[i].getFree() < hotelsAr[i].getRooms()) {
+				if (hotelsAr[i].getFree() > 0 ) {
 					System.out.println(hotelsAr[i].toString());
 				}
+			}
+		}
+		//Bonus stage
+		System.out.println("The list of hotels where the number of rooms is higher than 40%: ");
+		for (int i = 0; i < hotelsAr.length; i++) {
+			if (nameCity.equals(hotelsAr[i].getCity()) && hotelsAr[i].percentFreeRooms() > 40){
+				System.out.println(hotelsAr[i].getName());
 			}
 		}
 	}
